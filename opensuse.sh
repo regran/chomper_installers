@@ -21,7 +21,7 @@ then
 else
   echo -e "\nInstalling dependencies...\n";
   sudo zypper -n install --type pattern devel_basis
-  sudo zypper -n install git build-essential curl zlib-devel libbz2-devel sqlite3-devel readline-devel ncurses5-devel libopenssl-devel gdbm-devel python-pip mozille-nss-tools screen -y;
+  sudo zypper -n install git build-essential curl zlib-devel libbz2-devel sqlite3-devel readline-devel ncurses5-devel libopenssl-devel gdbm-devel python-pip mozille-nss-tools screen;
 fi
 
 cd ~/ && git clone https://github.com/aniketpanjwani/chomper.git;
