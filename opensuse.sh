@@ -20,8 +20,8 @@ then
   exit 1;
 else
   echo -e "\nInstalling dependencies...\n";
-  sudo zypper -y install --type pattern devel_basis
-  sudo zypper -y install git build-essential curl zlib-devel libbz2-devel sqlite3-devel readline-devel ncurses5-devel libopenssl-devel gdbm-devel python-pip mozille-nss-tools screen -y;
+  sudo zypper -n install --type pattern devel_basis
+  sudo zypper -n install git build-essential curl zlib-devel libbz2-devel sqlite3-devel readline-devel ncurses5-devel libopenssl-devel gdbm-devel python-pip mozille-nss-tools screen -y;
 fi
 
 cd ~/ && git clone https://github.com/aniketpanjwani/chomper.git;
@@ -50,7 +50,10 @@ exec $SHELL -l
 pyenv install 3.6.4
 
 # Install pipenv and virtual environment
-sudo -H pip install -U pipenv # Install pipenv
+sudo -H python -m pip install -U pipenv # Install pipenv
+
+pipenv --venv  || pipenv --two # Check if virtualenv exists
+
 pipenv install --dev --python 3.6.4 # Install packages
 
 # Install certificates
